@@ -8,7 +8,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.api_fatec.api_fatec.domain.cliente.ClienteRepository;
+import br.com.api_fatec.api_fatec.domain.produto.ProdutoRepository;
 import br.com.api_fatec.api_fatec.entities.Cliente;
+import br.com.api_fatec.api_fatec.entities.Produto;
 
 @RestController
 @SpringBootApplication
@@ -23,39 +25,17 @@ public class ApiFatecApplication {
 			cliente.setRazaoSocial("Danilo");
 			
 			clienteRepository.save(cliente);
+			
+//			Produto produto = new Produto();
+//			produto.setNome("nomeproduto");
+//			produto.setDescricao("desc produto");
+//			
+//			
+//			produtorepository.save(produto);
 		};
 	}
-	
 
-//    @RequestMapping("/")
-//    String home() {
-//        return "hello world";
-//    }
-//
-//    @RequestMapping("/numero1")
-//    int home3() {
-//        return 10;
-//    }
-//
-//    @RequestMapping("/numero/{num}")
-//    Integer numero2(@PathVariable Integer num) {
-//        return num;
-//    }
-//
-//    @RequestMapping("/classificar/{idade}")
-//    String classificarIdade(@PathVariable int idade) {
-//        if (idade < 0) {
-//            return "Idade inválida";
-//        } else if (idade < 12) {
-//            return "Criança";
-//        } else if (idade >= 12 && idade <= 18) {
-//            return "Adolescente";
-//        } else if (idade >= 19 && idade <= 60) {
-//            return "Adulto";
-//        } else {
-//            return "Idoso";
-//        }
-//    }
+
 
     public static void main(String[] args) {
         SpringApplication.run(ApiFatecApplication.class, args);
